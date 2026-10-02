@@ -1,0 +1,23 @@
+# Cadence Modus DFT Build Artifacts and Database Directories
+tbdata/
+testresults/
+work/
+INCA_libs/
+.simvision/
+waves.shm/
+
+# Log Files and Test Reports
+*.log
+*.bin
+*.vpd
+*.vcd
+*.vvp
+*.key
+faults_hard.log
+atalanta_report.log
+
+# Temporary Editor and OS Files
+*~
+*.swp
+.DS_Store
+Thumbs.db

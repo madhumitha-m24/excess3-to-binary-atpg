@@ -1,0 +1,44 @@
+# ============================================================================
+# File: excess3_to_binary.bench
+# Benchmark: excess3_to_binary
+# Format: ISCAS-85 Benchmark Netlist Format
+# Target Tool: Atalanta ATPG Fault Simulator
+# Description: Gate-level translation of 4-bit Excess-3 to Binary converter
+# ============================================================================
+
+# Primary Inputs
+INPUT(E3)
+INPUT(E2)
+INPUT(E1)
+INPUT(E0)
+
+# Primary Outputs
+OUTPUT(B3)
+OUTPUT(B2)
+OUTPUT(B1)
+OUTPUT(B0)
+
+# Inverters for Input Signals
+NOT_E0 = NOT(E0)
+NOT_E1 = NOT(E1)
+NOT_E2 = NOT(E2)
+
+# Bit 0 Logic: B0 = ~E0
+B0 = NOT(E0)
+
+# Bit 1 Logic: B1 = E1 ^ E0
+B1 = XOR(E1, E0)
+
+# Shared Product Subterm
+W_E1_E0 = AND(E1, E0)
+
+# Bit 2 Logic: B2 = (~E2 & ~E1) | (~E2 & ~E0) | (E2 & E1 & E0)
+W_NE2_NE1 = AND(NOT_E2, NOT_E1)
+W_NE2_NE0 = AND(NOT_E2, NOT_E0)
+W_E2_E1_E0 = AND(E2, W_E1_E0)
+B2 = OR(W_NE2_NE1, W_NE2_NE0, W_E2_E1_E0)
+
+# Bit 3 Logic: B3 = (E3 & E2) | (E3 & E1 & E0)
+W_E3_E2 = AND(E3, E2)
+W_E3_E1_E0 = AND(E3, W_E1_E0)
+B3 = OR(W_E3_E2, W_E3_E1_E0)
