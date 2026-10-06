@@ -1,0 +1,18 @@
+* Name of circuit:  bench/excess3_to_binary.bench
+* Primary inputs :
+  E3 E2 E1 E0 
+  
+* Primary outputs:
+  B3 B2 B1 B0 
+  
+
+* Test patterns and fault free responses:
+
+   1: 0110 0011
+   2: 0101 0010
+   3: 0001 0110
+   4: 1100 1001
+   5: 0010 0111
+   6: 1000 0101
+   7: 0111 0100
+   8: 1011 1000

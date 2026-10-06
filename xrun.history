@@ -1,0 +1,1 @@
+s1(06Oct2026:16:56:46):  xrun -64bit -access +rwc rtl/excess3_to_binary.v testbench/tb_excess3_to_binary.v -top tb_excess3_to_binary 
