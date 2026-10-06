@@ -1,7 +1,5 @@
-# 23ECE336 VLSI Testing and Testability: Design for Testability (DFT) and ATPG Analysis
-**Topic 18: 4-Bit Excess-3 to Binary Converter**  
-*Department of Electronics and Communication Engineering*
-
+Design for Testability (DFT) and ATPG Analysis
+**Topic : 4-Bit Excess-3 to Binary Converter**  
 ---
 
 ## 1. Architectural Specification and Boolean Formulation
